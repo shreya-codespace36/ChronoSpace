@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+#year-progress {
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+#dots-container {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 6px;
+  max-width: 420px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.dot.past {
+  background: #6fb1ff;
+}
+
+.dot.today {
+  background: #fff;
+  box-shadow: 0 0 10px #fff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+#clock {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+:root {
+  --accent: #6fb1ff;
+}
+
+.dot.past {
+  background: var(--accent);
+}
+.philosophy {
+  margin-top: 25px;
+  opacity: 0.6;
+  font-style: italic;
+  text-align: center;
+}
+:root {
+  --m0: #b3e5fc;   /* Jan */
+  --m1: #d1c4e9;
+  --m2: #c8e6c9;
+  --m3: #fff9c4;
+  --m4: #ffe0b2;
+  --m5: #ffccbc;
+  --m6: #f8bbd0;
+  --m7: #e1bee7;
+  --m8: #c5cae9;
+  --m9: #bbdefb;
+  --m10: #b2ebf2;
+  --m11: #dcedc8;
+}
+body {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  animation: bgMove 10s ease infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.title-wrap {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#titleInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.9;
+}
+
+#titleInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.notes-box {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notes-box textarea {
+  width: 260px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 14px;
+  resize: none;
+  outline: none;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  backdrop-filter: blur(12px);
+}
+
+.notes-box textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.notes-box textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+}
