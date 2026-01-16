@@ -30,7 +30,6 @@ chronoscape/
 │── script.js
 │── assets/
 │   ├── preview.png
-│   └── favicon.png
 │── README.md
 ```
 
